@@ -1,0 +1,40 @@
+-- mr_supermarket Database Access Queries
+
+-- Create user vasu
+CREATE USER 'vasu'@'localhost' IDENTIFIED BY 'vasu';
+
+-- Grant all privileges on mr_supermarket database to vasu
+GRANT ALL PRIVILEGES ON mr_supermarket.* TO 'vasu'@'localhost' WITH GRANT OPTION;
+
+-- Create user prashant
+CREATE USER 'prashant'@'localhost' IDENTIFIED BY 'prashant';
+
+-- Grant all privileges on mr_supermarket database to prashant
+GRANT ALL PRIVILEGES ON mr_supermarket.* TO 'prashant'@'localhost' WITH GRANT OPTION;
+
+-- Create user Tiara
+CREATE USER 'Tiara'@'localhost' IDENTIFIED BY 'Tiara';
+
+-- Grant specific permissions on mr_supermarket database to Tiara
+GRANT SELECT, INSERT, UPDATE, DELETE ON mr_supermarket.* TO 'Tiara'@'localhost';
+
+-- Create user Raj
+CREATE USER 'Raj'@'localhost' IDENTIFIED BY 'Raj';
+
+-- Grant read-only access to mr_supermarket database to Raj
+GRANT SELECT ON mr_supermarket.* TO 'Raj'@'localhost';
+
+-- Apply changes
+FLUSH PRIVILEGES;
+
+-- Check permissions for vasu
+SHOW GRANTS FOR 'vasu'@'localhost';
+
+-- Check permissions for prashant
+SHOW GRANTS FOR 'prashant'@'localhost';
+
+-- Check permissions for Tiara
+SHOW GRANTS FOR 'Tiara'@'localhost';
+
+-- Check permissions for Raj
+SHOW GRANTS FOR 'Raj'@'localhost';
