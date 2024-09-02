@@ -28,7 +28,7 @@ CREATE TABLE `Customers` (
   PRIMARY KEY (`Customer_id`),
   UNIQUE KEY `Customer_id` (`Customer_id`),
   UNIQUE KEY `C_contact` (`C_contact`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -54,7 +54,7 @@ CREATE TABLE `Managers` (
   `M_contact` char(10) NOT NULL,
   PRIMARY KEY (`Manager_id`),
   UNIQUE KEY `Manager_id` (`Manager_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,7 +87,7 @@ CREATE TABLE `Orders` (
   KEY `Product_id` (`Product_id`),
   CONSTRAINT `Orders_ibfk_1` FOREIGN KEY (`Customer_id`) REFERENCES `Customers` (`Customer_id`),
   CONSTRAINT `Products_ibfk_1` FOREIGN KEY (`Product_id`) REFERENCES `Products` (`Product_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -116,7 +116,7 @@ CREATE TABLE `Payments` (
   UNIQUE KEY `Payment_id` (`Payment_id`),
   KEY `Order_id` (`Order_id`),
   CONSTRAINT `Payments_ibfk_1` FOREIGN KEY (`Order_id`) REFERENCES `Orders` (`Order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -144,7 +144,7 @@ CREATE TABLE `Products` (
   `Unit_of_measure` varchar(50) NOT NULL,
   PRIMARY KEY (`Product_id`),
   UNIQUE KEY `Product_id` (`Product_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -174,7 +174,7 @@ CREATE TABLE `Shelves` (
   KEY `Manager_id` (`Manager_id`),
   CONSTRAINT `Shelf_Product_ibfk_1` FOREIGN KEY (`Product_id`) REFERENCES `Products` (`Product_id`),
   CONSTRAINT `Shelves_ibfk_1` FOREIGN KEY (`Manager_id`) REFERENCES `Managers` (`Manager_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
