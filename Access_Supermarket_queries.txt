@@ -1,17 +1,5 @@
 -- mr_supermarket Database Access Queries
 
--- Create user vasu
-CREATE USER 'vasu'@'localhost' IDENTIFIED BY 'vasu';
-
--- Grant all privileges on mr_supermarket database to vasu
-GRANT ALL PRIVILEGES ON mr_supermarket.* TO 'vasu'@'localhost' WITH GRANT OPTION;
-
--- Create user prashant
-CREATE USER 'prashant'@'localhost' IDENTIFIED BY 'prashant';
-
--- Grant all privileges on mr_supermarket database to prashant
-GRANT ALL PRIVILEGES ON mr_supermarket.* TO 'prashant'@'localhost' WITH GRANT OPTION;
-
 -- Create user Tiara
 CREATE USER 'Tiara'@'localhost' IDENTIFIED BY 'Tiara';
 
@@ -26,12 +14,6 @@ GRANT SELECT ON mr_supermarket.* TO 'Raj'@'localhost';
 
 -- Apply changes
 FLUSH PRIVILEGES;
-
--- Check permissions for vasu
-SHOW GRANTS FOR 'vasu'@'localhost';
-
--- Check permissions for prashant
-SHOW GRANTS FOR 'prashant'@'localhost';
 
 -- Check permissions for Tiara
 SHOW GRANTS FOR 'Tiara'@'localhost';
