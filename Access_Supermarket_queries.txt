@@ -1,10 +1,10 @@
 -- mr_supermarket Database Access Queries
 
--- Create user Tiara
-CREATE USER 'Tiara'@'localhost' IDENTIFIED BY 'Tiara';
+-- Create user Tara
+CREATE USER 'Tara'@'localhost' IDENTIFIED BY 'Tara';
 
--- Grant specific permissions on mr_supermarket database to Tiara
-GRANT SELECT, INSERT, UPDATE, DELETE ON mr_supermarket.* TO 'Tiara'@'localhost';
+-- Grant specific permissions on mr_supermarket database to Tara
+GRANT SELECT, INSERT ON mr_supermarket.* TO 'Tara'@'localhost';
 
 -- Create user Raj
 CREATE USER 'Raj'@'localhost' IDENTIFIED BY 'Raj';
@@ -15,8 +15,8 @@ GRANT SELECT ON mr_supermarket.* TO 'Raj'@'localhost';
 -- Apply changes
 FLUSH PRIVILEGES;
 
--- Check permissions for Tiara
-SHOW GRANTS FOR 'Tiara'@'localhost';
+-- Check permissions for Tara
+SHOW GRANTS FOR 'Tara'@'localhost';
 
 -- Check permissions for Raj
 SHOW GRANTS FOR 'Raj'@'localhost';
