@@ -23,8 +23,8 @@ DROP TABLE IF EXISTS `Customers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Customers` (
-  `Customer_id` varchar(255) NOT NULL,
-  `C_contact` varchar(10) NOT NULL,
+  `Customer_id` char(10) NOT NULL,
+  `C_contact` char(10) NOT NULL,
   PRIMARY KEY (`Customer_id`),
   UNIQUE KEY `Customer_id` (`Customer_id`),
   UNIQUE KEY `C_contact` (`C_contact`)
@@ -49,9 +49,9 @@ DROP TABLE IF EXISTS `Managers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Managers` (
-  `Manager_id` varchar(255) NOT NULL,
-  `Manager_name` varchar(255) NOT NULL,
-  `M_contact` varchar(10) NOT NULL,
+  `Manager_id` char(10) NOT NULL,
+  `Manager_name` char(10) NOT NULL,
+  `M_contact` char(10) NOT NULL,
   PRIMARY KEY (`Manager_id`),
   UNIQUE KEY `Manager_id` (`Manager_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -75,12 +75,12 @@ DROP TABLE IF EXISTS `Orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Orders` (
-  `Order_id` varchar(255) NOT NULL,
+  `Order_id` char(10) NOT NULL,
   `Order_date` date NOT NULL,
-  `Product_id` varchar(255) NOT NULL,
+  `Product_id` char(10) NOT NULL,
   `Quantity` decimal(10,2) NOT NULL,
   `Amount` decimal(10,2) NOT NULL,
-  `Customer_id` varchar(255) DEFAULT NULL,
+  `Customer_id` char(10) DEFAULT NULL,
   PRIMARY KEY (`Order_id`),
   UNIQUE KEY `Order_id` (`Order_id`),
   KEY `Customer_id` (`Customer_id`),
@@ -108,10 +108,10 @@ DROP TABLE IF EXISTS `Payments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Payments` (
-  `Payment_id` varchar(255) NOT NULL,
-  `Payment_mode` varchar(60) NOT NULL,
+  `Payment_id` char(10) NOT NULL,
+  `Payment_mode` ENUM('Credit Card', 'Debit Card', 'PayPal', 'Bank Transfer', 'Cash') NOT NULL,
   `Payment_date` date NOT NULL,
-  `Order_id` varchar(255) DEFAULT NULL,
+  `Order_id` char(10) DEFAULT NULL,
   PRIMARY KEY (`Payment_id`),
   UNIQUE KEY `Payment_id` (`Payment_id`),
   KEY `Order_id` (`Order_id`),
@@ -137,9 +137,9 @@ DROP TABLE IF EXISTS `Products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Products` (
-  `Product_id` varchar(255) NOT NULL,
-  `Product_name` varchar(255) NOT NULL,
-  `Product_category` varchar(255) DEFAULT NULL,
+  `Product_id` char(10) NOT NULL,
+  `Product_name` varchar(50) NOT NULL,
+  `Product_category` varchar(50) DEFAULT NULL,
   `Unit_price` decimal(10,2) NOT NULL,
   `Unit_of_measure` varchar(50) NOT NULL,
   PRIMARY KEY (`Product_id`),
@@ -165,9 +165,9 @@ DROP TABLE IF EXISTS `Shelves`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Shelves` (
-  `Shelf_id` varchar(255) NOT NULL,
-  `Manager_id` varchar(255) DEFAULT NULL,
-  `Product_id` varchar(255) NOT NULL,
+  `Shelf_id` char(10) NOT NULL,
+  `Manager_id` char(10) DEFAULT NULL,
+  `Product_id` char(10) NOT NULL,
   PRIMARY KEY (`Shelf_id`),
   UNIQUE KEY `Shelf_id` (`Shelf_id`),
   KEY `Product_id` (`Product_id`),
