@@ -1,16 +1,16 @@
 -- mr_supermarket Database Access Queries
 
--- Create user Tara
-CREATE USER 'Tara'@'localhost' IDENTIFIED BY 'Tara';
+-- Create user Tara(Junior dev)
+CREATE USER 'Tara'@'localhost' IDENTIFIED BY 'Junior dev';
 
 -- Grant specific permissions on mr_supermarket database to Tara
 GRANT SELECT, INSERT ON mr_supermarket.* TO 'Tara'@'localhost';
 
--- Create user Raj
+-- Create user Raj(store manager)
 CREATE USER 'Raj'@'localhost' IDENTIFIED BY 'Raj';
 
 -- Grant read-only access to mr_supermarket database to Raj
-GRANT SELECT ON mr_supermarket.* TO 'Raj'@'localhost';
+GRANT SELECT ON mr_supermarket.* TO 'store manager'@'localhost';
 
 -- Apply changes
 FLUSH PRIVILEGES;
