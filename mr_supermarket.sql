@@ -59,7 +59,7 @@ INSERT INTO `Orders` VALUES ('O001','2024-08-20','P001',10.00,5.00,'C001'),('O00
 DROP TABLE IF EXISTS `Payments`;
 CREATE TABLE `Payments` (
   `Payment_id` char(10) NOT NULL,
-  `Payment_mode` ENUM('Credit Card', 'Debit Card', 'PayPal', 'Bank Transfer', 'Cash') NOT NULL,
+  `Payment_mode` ENUM('Credit Card', 'Debit Card', 'UPI', 'Bank Transfer', 'Cash') NOT NULL,
   `Payment_date` date NOT NULL,
   `Order_id` char(10) DEFAULT NULL,
   PRIMARY KEY (`Payment_id`),
