@@ -77,10 +77,10 @@ INSERT INTO `Payments` VALUES ('PM001','Credit Card','2024-08-20','O001'),('PM00
 DROP TABLE IF EXISTS `Products`;
 CREATE TABLE `Products` (
   `Product_id` char(10) NOT NULL,
-  `Product_name` varchar(50) NOT NULL,
-  `Product_category` varchar(50) DEFAULT NULL,
+  `Product_name` varchar(35) NOT NULL,
+  `Product_category` varchar(30) DEFAULT NULL,
   `Unit_price` decimal(10,2) NOT NULL,
-  `Unit_of_measure` varchar(50) NOT NULL,
+  `Unit_of_measure` varchar(20) NOT NULL,
   PRIMARY KEY (`Product_id`),
   UNIQUE KEY `Product_id` (`Product_id`)
 );
